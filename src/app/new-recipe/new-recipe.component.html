@@ -1,0 +1,26 @@
+<h1>Add a new Recipe</h1>
+<form action="recipe">
+  <input type="text" class="title" placeholder="Recipe Name">
+  <br>
+  <input type="number" id="number" #number>
+  <select id="measurement" #measurement>
+    <option value="cups">Cups</option>
+    <option value="lbs">Lbs</option>
+    <option value="oz">Oz</option>>
+    <option value="gallons">Gallons</option>
+  </select>
+  <input type="text" id="ingredients" #ingredients placeholder="ingredient"> 
+  <br>
+  <button type="button" (click)='addIngredient(number.value, measurement.value, ingredients.value)'>Add Another Ingredient</button>
+  <br>
+  <textarea rows="10" cols="50" placeholder="Directions"></textarea>
+  <br>
+  <button type="submit" (click)='createButtonClicked()'>Save Recipe</button>
+</form>
+<div id="currentList">
+  <ul class="life-container" *ngFor="let ingredient of ingredientList">
+        <li> {{ ingredient[0] +" "+ ingredient[1] + " " + ingredient[2]}}
+        </li>
+  </ul>
+
+</div>
